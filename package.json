@@ -2,9 +2,11 @@
   "name": "nodejs-restify-redis-mongo-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/server",
+    "test": "NODE_ENV=test mocha --recursive test",
+    "lint": "jshint bin lib/ config/ app.js && jscs bin/ lib/ config/ app.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,30 @@
   "bugs": {
     "url": "https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate/issues"
   },
-  "homepage": "https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate#readme"
+  "homepage": "https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate#readme",
+  "dependencies": {
+    "async": "^0.9.0",
+    "auto-load": "^1.1.0",
+    "express-session": "^1.11.2",
+    "mongoose": "^4.0.1",
+    "rarity": "^2.1.1",
+    "restify": "^3.0.1",
+    "restify-bunyan-logger": "^2.0.7",
+    "restify-json-filtering": "^1.0.0",
+    "restify-session": "^1.0.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "create-dataset": "^1.0.2",
+    "debug": "^2.2.0",
+    "factory-lady": "^0.1.0",
+    "formidable": "^1.0.17",
+    "jscs": "^1.11.3",
+    "jshint": "^2.6.3",
+    "mocha": "^2.2.5",
+    "mocha-mongoose": "^1.0.4",
+    "mongodb": "^1.4.38",
+    "should": "^6.0.3",
+    "supertest": "^1.0.1"
+  }
 }
