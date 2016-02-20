@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-restify-redis-mongo-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Antonhansel/nodejs-restify-redis-mongo-boilerplate#readme"
+}
