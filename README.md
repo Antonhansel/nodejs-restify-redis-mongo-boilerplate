@@ -13,4 +13,4 @@ To launch the api you will need:
 	* A local redis server running
 
 
-Then, just type ```node bin/server``` and start doing requests on http://localhost:8000 or whatever shitty port you set in your config
+Then, just type ```node bin/server``` and start doing requests on http://localhost:8000 or whatever port you set in your config
