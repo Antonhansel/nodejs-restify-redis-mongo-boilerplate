@@ -33,4 +33,9 @@ module.exports = {
     ttl: process.env.SESSION_TTL || 1209600,
   },
   salt: process.env.SALT || "thisIsYourSalt",
+  aws: {
+    bucket: process.env.S3_BUCKET || 'bucket',
+    id: process.env.S3_ID || 'bucketID',
+    secret: process.env.S3_SECRET || 'bucketSecret'
+  }
 };
