@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node bin/server",
+    "start": "if test \"$NODE_ENV\" = \"production\" ; then node bin/server ; else node_modules/nodemon/bin/nodemon.js bin/server; fi",
     "test": "NODE_ENV=test mocha --recursive test",
     "lint": "jshint bin lib/ config/ app.js && jscs bin/ lib/ config/ app.js"
   },
@@ -41,6 +41,7 @@
     "mocha": "^2.2.5",
     "mocha-mongoose": "^1.0.4",
     "mongodb": "^1.4.38",
+    "nodemon": "^1.11.0",
     "should": "^6.0.3",
     "supertest": "^1.0.1"
   }
