@@ -18,7 +18,7 @@ var redisConfig = {
   ttl: 3600000,
   debug: process.env.NODE_ENV ? false : true,
   connection: {
-    host: redisUrl.hostname,
+    host: redisUrl.hostame,
     port: redisUrl.port,
     db: 0,
     pass: redisCredentials[1],
