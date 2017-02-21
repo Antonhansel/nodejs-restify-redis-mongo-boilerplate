@@ -27,7 +27,7 @@ Run `docker-compose build`. It will
 * install [nodemon](https://github.com/remy/nodemon) globally in your container
 * install all dependencies from the package.json in your container
 * expose port 8000 to the host
-* instruct the container to execute `npm dev` on start up.
+* instruct the container to execute `npm run dev` on start up.
 
 ## Start
 
@@ -36,5 +36,5 @@ Run `docker-compose up` to create and start the API and all DB containers. The a
 ## Setup for production
 
 * You need to change the the 'NODE_ENV' to production in `docker-compose.yml`
-* You can change the ports in `docker-compose.yml`
-* You can also change the port in the `Dockerfile`
+* You can change the ports in `docker-compose.yml` (port is 80 in production by default)
+* You can also change the port in the `Dockerfile` (port is 80 in production by default)
