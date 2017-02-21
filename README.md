@@ -9,7 +9,7 @@ This API exposes various endpoints following the REST convention.
 Install [Docker](https://www.docker.com/) on your system.
 
 * [Install instructions](https://docs.docker.com/docker-for-mac/) for Mac OS X
-* [Install instructions](https://docs.docker.com/docker-for-windows/install/)
+* [Install instructions](https://docs.docker.com/docker-for-windows/install/) for Windows
 * [Install instructions](https://docs.docker.com/engine/installation/linux/ubuntu/) for Ubuntu Linux
 * [Install instructions](https://docs.docker.com/engine/installation/) for other platforms
 
@@ -18,8 +18,7 @@ Install [Docker Compose](https://docs.docker.com/compose/install/) on your syste
 * Python/pip:
 ```$ sudo pip install -U docker-compose```
 * Other:
-	```$ curl -L "https://github.com/docker/compose/releases/download/1.11.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-	```
+```$ curl -L "https://github.com/docker/compose/releases/download/1.11.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
 
 ## Setup
 
@@ -38,3 +37,4 @@ Run `docker-compose up` to create and start the API and all DB containers. The a
 
 * You need to change the the 'NODE_ENV' to production in `docker-compose.yml`
 * You can change the ports in `docker-compose.yml`
+* You can also change the port in the `Dockerfile`
