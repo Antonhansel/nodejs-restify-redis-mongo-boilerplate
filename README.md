@@ -15,23 +15,20 @@ Install [Docker](https://www.docker.com/) on your system.
 
 Install [Docker Compose](https://docs.docker.com/compose/install/) on your system.
 
-* Python/pip:
-```$ sudo pip install -U docker-compose```
-* Other:
-```$ curl -L "https://github.com/docker/compose/releases/download/1.11.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
-
 ## Setup
 
 Run `docker-compose build`. It will
 
-* install [nodemon](https://github.com/remy/nodemon) globally in your container
-* install all dependencies from the package.json in your container
+* install all dependencies from the package.json in your container with nodemon to have the hot reloading in development
 * expose port 8000 to the host
 * instruct the container to execute `npm run dev` on start up.
 
 ## Start
 
 Run `docker-compose up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 8000.
+**/!\ Nodemon is used with -L by default (in package.json) /!\ **
+
+**/!\ Remove it for better performance (required with Docker tool on Windows 8.1) /!\ **
 
 ## Setup for production
 

@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "if test \"$NODE_ENV\" = \"production\" ; then node bin/server ; else node_modules/nodemon/bin/nodemon.js bin/server; fi",
+    "start": "if test \"$NODE_ENV\" = \"production\" ; then node bin/server ; else node_modules/nodemon/bin/nodemon.js -L bin/server; fi",
     "test": "NODE_ENV=test mocha --recursive test",
     "lint": "jshint bin lib/ config/ app.js && jscs bin/ lib/ config/ app.js"
   },
