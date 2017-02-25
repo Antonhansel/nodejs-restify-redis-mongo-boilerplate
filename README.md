@@ -63,7 +63,7 @@ Run `docker-compose -f docker-compose-prod.yml build` in order to:
 
 To start the API:
 
-* Run `docker-compose -f docker-compose-prod.yml up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 8000.
+* Run `docker-compose -f docker-compose-prod.yml up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 80.
 
 #### Without Docker
 
