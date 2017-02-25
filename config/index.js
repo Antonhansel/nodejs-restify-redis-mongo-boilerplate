@@ -14,13 +14,12 @@ var port = process.env.PORT || defaultPort;
 
 // MongoDB configuration
 
-// Set the real address for non Docker apps
-var mongoHost = "mongo";
+// Set Mongo host address
+var mongoHost = process.env.DOCKER_APP ? "mongo" : "localhost";
 var mongo = process.env.MONGOURL || ("mongodb://" + mongoHost + "/" + nodeEnv);
 
-// Redis server host address
-// Set the real address for non Docker apps
-var redisHost = "redis";
+// Set Redis host address
+var redisHost = process.env.DOCKER_APP ? "redis" : "localhost";
 
 // Exports configuration for use by app.js
 module.exports = {

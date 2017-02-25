@@ -15,23 +15,64 @@ Install [Docker](https://www.docker.com/) on your system.
 
 Install [Docker Compose](https://docs.docker.com/compose/install/) on your system.
 
-## Setup
+## Usage
 
-Run `docker-compose build`. It will
+### Development
 
-* install all dependencies from the package.json in your container with nodemon to have the hot reloading in development
+#### With Docker
+
+Run `docker-compose -f docker-compose-dev.yml build` in order to:
+
+* install all dependencies from the package.json in your container with nodemon to have the hot reloading
 * expose port 8000 to the host
-* instruct the container to execute `npm run dev` on start up.
+* instruct the container to execute `npm start` with the proper ENV variables.
 
-## Start
+To start the API:
 
-Run `docker-compose up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 8000.
-**/!\ Nodemon is used with -L by default (in package.json) /!\ **
+* Run `docker-compose -f docker-compose-dev.yml up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 8000.
 
-**/!\ Remove it for better performance (required with Docker tool on Windows 8.1) /!\ **
+To find the API IP use the command:
+```bash
+$ docker-machine ip
+```
 
-## Setup for production
+**/!\ Nodemon is used with -L by default (in package.json) /!\**
 
-* You need to change the the 'NODE_ENV' to production in `docker-compose.yml`
-* You can change the ports in `docker-compose.yml` (port is 80 in production by default)
-* You can also change the port in the `Dockerfile` (port is 80 in production by default)
+**/!\ Remove it for better performance (required with Docker tool on Windows 8.1) /!\**
+
+#### Without Docker
+
+To launch the api you will need:
+
+* A local mongo server running
+
+* A local redis server running
+
+
+Then, just type ```node bin/server``` and start doing requests on http://localhost:8000 or whatever port you set in your config
+
+### Production
+
+#### With Docker
+
+Run `docker-compose -f docker-compose-prod.yml build` in order to:
+
+* install production dependencies from the package.json in your container
+* expose port 80 to the host
+* instruct the container to execute `npm start` with the proper ENV variables.
+
+To start the API:
+
+* Run `docker-compose -f docker-compose-prod.yml up` to create and start the API and all DB containers. The app should then be running on your docker daemon on port 8000.
+
+#### Without Docker
+
+To launch the api you will need:
+
+* A mongo server running, and the host address set in ```config/index.js```
+
+* A redis server running, and the host address set in ```config/index.js```
+
+The env variable ```NODE_ENV``` set to ```production```
+
+Then, use the command ```node bin/server``` and start doing requests on http://localhost:80 or whatever port you set in your config
