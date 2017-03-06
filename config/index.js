@@ -13,7 +13,13 @@ if(nodeEnv === "production") {
 var port = process.env.PORT || defaultPort;
 
 // MongoDB configuration
-var mongo = process.env.MONGOURL || ("mongodb://localhost/" + nodeEnv);
+
+// Set Mongo host address
+var mongoHost = process.env.DOCKER_APP ? "mongo" : "localhost";
+var mongo = process.env.MONGOURL || ("mongodb://" + mongoHost + "/" + nodeEnv);
+
+// Set Redis host address
+var redisHost = process.env.DOCKER_APP ? "redis" : "localhost";
 
 // Exports configuration for use by app.js
 module.exports = {
@@ -29,7 +35,7 @@ module.exports = {
   mongoUrl: mongo,
   // Session
   session: {
-    url: process.env.REDISCLOUD_URL || 'redis://yourredisserver-sessions@localhost:6379',
+    url: process.env.REDISCLOUD_URL || 'redis://yourredisserver-sessions@' + redisHost + ':6379',
     ttl: process.env.SESSION_TTL || 1209600,
   },
   salt: process.env.SALT || "thisIsYourSalt",
